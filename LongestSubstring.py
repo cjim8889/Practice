@@ -1,32 +1,27 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: 'str') -> 'int':
         
-        
         output = 0
+        start = 0
+        dic = {}
+        for index, val in enumerate(s):
+            if val in dic and dic[val] >= start:
 
-        while (s):
-            dic = {}
-            flag = False
+                start = dic[val] + 1
+                dic[val] = index
 
-            for i in range(len(s)):
+            else:
+                # print(s[start:index + 1])
+                output = max(output, index - start + 1)
+                dic[val] = index
                 
-                if (s[i] in dic):
-                    output = max(output, i)
-                    s = s[dic[s[i]] + 1:]
-                    flag = True
-                    break
-                else:
-                    dic[s[i]] = i
-
-            if (not flag):
-                return max(output, len(s))
-
-            if (output >= len(s)):
-                return output
-
+        
         return output
 
+
+
+
 if __name__ == "__main__":
-    print(Solution().lengthOfLongestSubstring("abcabcbb"))
+    print(Solution().lengthOfLongestSubstring("bbbbb"))
 
 
