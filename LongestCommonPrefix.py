@@ -23,7 +23,33 @@ class Solution:
 
 class Solution2:
     def longestCommonPrefix(self, strs: 'List[str]') -> 'str':
-        pass
+        
+        if (not len(strs)):
+            return ""
+        elif (len(strs) == 1):
+            return strs[0]
+
+        firstStr = strs[0]
+        prefix = ""
+        lengthList = [len(i) for i in strs]
+        strs = strs[1:]
+        
+
+        for i in range(min(lengthList)):
+
+            for j in strs:
+                
+                if (not j[i] == firstStr[i]):
+                    return prefix
+
+            prefix = firstStr[:i + 1]
+        return prefix
+            
+
+
+
+
+
 
 if __name__ == "__main__":
-    Solution().longestCommonPrefix(["c","c"])
+    Solution2().longestCommonPrefix(["","b"])
