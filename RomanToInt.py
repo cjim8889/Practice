@@ -41,9 +41,7 @@ class Solution2:
             result += dic[s[i]]
                 
 
-            
-
-
+        
 if __name__ == "__main__":
     Solution().romanToInt("LVIII")
 
