@@ -48,9 +48,16 @@ class Solution:
 
         return result
 
+class Solution2:
+
+
+    def threeSum(self, nums: 'List[int]') -> 'List[List[int]]':
+        pass
+
 
 if __name__ == "__main__":
     Solution().threeSum([-1,0,1,2,-1,-4])
+    Solution2().threeSum([-1,0,1,2,-1,-4])
 
 
 
