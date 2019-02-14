@@ -1,4 +1,5 @@
 class Solution:
+    # Kadane's algorithm
     def maxSubArray(self, nums: 'List[int]') -> 'int':
         # s = sum(nums)
         if (len(nums) == 1):
