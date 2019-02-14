@@ -11,8 +11,8 @@ class Solution:
 
         for i in nums[1:]:
 
-            csum = max(i, csum + i)
-            sum = max(sum, csum)
+            csum = i if i >= csum + i else csum + i
+            sum = sum if sum >= csum else csum
             
         return sum
 
