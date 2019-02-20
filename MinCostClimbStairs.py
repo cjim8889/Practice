@@ -5,7 +5,6 @@ class Solution:
 
         cost0 = self._minCost(0, cost)
         cost1 = self._minCost(1, cost)
-
         return cost0 if cost0 < cost1 else cost1
 
     def _minCost(self, i, cost):
@@ -24,5 +23,15 @@ class Solution:
 
         return self.minCosts[i]
 
+class Solution2:
+    # Not written by me, just for the purpose of learning
+    def minCostClimbingStairs(self, cost: 'List[int]') -> 'int':
+        f1 = f2 = 0
+        for x in reversed(cost):
+
+            f1, f2 = x + min(f1, f2), f1
+        return min(f1, f2)
+
+
 if __name__ == "__main__":
-    print(Solution().minCostClimbingStairs([10,15,20]))
+    print(Solution2().minCostClimbingStairs([10,15,20]))
