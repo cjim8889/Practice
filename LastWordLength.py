@@ -13,7 +13,7 @@ class Solution:
                 flag = True
                 length += 1
             else:
-                if (flag)：
+                if (flag):
                     break
         return length
 
