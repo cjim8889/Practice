@@ -7,3 +7,18 @@ class Solution:
             n ^= i
         
         return n
+
+class Solution2:
+    def singleNumber(self, nums: 'List[int]') -> 'int':
+        
+        table = dict()
+
+        for i in nums:
+            
+            if (i not in table):
+                table[i] = 1
+            else:
+                table.pop(i)
+
+        
+        return table.popitem()[0]
