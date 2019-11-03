@@ -27,7 +27,6 @@ class Solution:
 
         return (False, [])
         
-        
 if __name__ == "__main__":
     s = Solution()
     print(s.combinationSum([2, 3, 6, 7], 7))
